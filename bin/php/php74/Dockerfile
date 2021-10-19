@@ -41,6 +41,8 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install -j$(nproc) intl && \
     docker-php-ext-install mbstring
 
+RUN docker-php-ext-install opcache
+
 # Enable apache modules
 RUN a2enmod rewrite headers
 
