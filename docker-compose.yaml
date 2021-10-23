@@ -30,10 +30,10 @@ services:
             - ${MYSQL_DATA_DIR:-./data/mysql}:/var/lib/mysql
             - ${MYSQL_LOG_DIR:-./logs/mysql}:/var/log/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-            MYSQL_DATABASE: ${MYSQL_DATABASE}
-            MYSQL_USER: ${MYSQL_USER}
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: docker
+            MYSQL_DATABASE: docker
+            MYSQL_USER: docker
+            MYSQL_PASSWORD: docker
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: '${PROJECT_NAME}-phpmyadmin'
@@ -43,10 +43,10 @@ services:
             PMA_HOST: database
             PMA_PORT: 3306
             PMA_USER: root
-            PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-            MYSQL_USER: ${MYSQL_USER}
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            PMA_PASSWORD: docker
+            MYSQL_ROOT_PASSWORD: docker
+            MYSQL_USER: docker
+            MYSQL_PASSWORD: docker
         ports:
             - '${PMA_PORT}:80'
         volumes:
