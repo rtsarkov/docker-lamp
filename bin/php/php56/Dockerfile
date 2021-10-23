@@ -38,7 +38,7 @@ RUN docker-php-ext-install curl && \
 #    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 
 # Enable apache modules
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers ssl
 
 EXPOSE 80
 
