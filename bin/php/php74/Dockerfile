@@ -44,7 +44,7 @@ RUN docker-php-ext-install pdo_mysql && \
 RUN docker-php-ext-install opcache
 
 # Enable apache modules
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers ssl
 
 # Cleanup
 RUN rm -rf /usr/src/*
