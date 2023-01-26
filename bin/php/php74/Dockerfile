@@ -45,6 +45,7 @@ RUN docker-php-ext-install opcache
 
 # Enable apache modules
 RUN a2enmod rewrite headers ssl
+RUN usermod -u 1000 www-data
 
 # Cleanup
 RUN rm -rf /usr/src/*
