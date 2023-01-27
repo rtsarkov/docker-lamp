@@ -42,6 +42,8 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install mbstring
 
 RUN docker-php-ext-install opcache
+RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
+    && docker-php-ext-install gd
 
 # Enable apache modules
 RUN a2enmod rewrite headers ssl
